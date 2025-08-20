@@ -66,7 +66,6 @@
         </div>
         <div class="col-sm-10">
             @yield('content')
-            @include('sweetalert::alert')
         </div>
     </div>
 </body>
