@@ -16,8 +16,9 @@ return new class extends Migration
             $table->foreignId('users_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->string('title');
             $table->string('description');
-            $table->boolean('is_completed');
+            $table->boolean('is_completed')->default(0);
             $table->string('completed_at')->default('Not Finished Yet');
+            $table->boolean('is_pinned')->default(0);
             $table->timestamps();
         });
     }

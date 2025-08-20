@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login Page</title>
+    <title>Registration Page</title>
     <link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{ asset('assets/fontawesome/css/all.min.css') }}">
 </head>
@@ -24,10 +24,10 @@
         <div class="card shadow-sm mt-5">
           <div class="login-box">
              <div class="card-header text-center text-bg-info">
-                <h4 class="text-white mb-0">Login Page</h4>
+                <h4 class="text-white mb-0">Registration Page</h4>
             </div>
             <div class="card-body">
-                <form action="{{ route('auth') }}" method="post">
+                <form action="{{ route('SignIn') }}" method="post">
                     @csrf
                     <div class="mb-3">
                         <label for="username" class="form-label">Username:</label>
@@ -49,11 +49,11 @@
                         </div>
                     </div>
                     <div class="d-grid">
-                        <button type="submit" class="btn btn-outline-info">Login</button>
+                        <button type="submit" class="btn btn-outline-info">Register</button>
                     </div>
                 </form>
                 <span>
-                    Don't have an account yet?,&nbsp;<a href="{{  route('register') }}" style="text-decoration: none">Register here</a>
+                    Already have an account?,&nbsp;<a href="{{  route('login') }}" style="text-decoration: none">Login here</a>
                 </span>
             </div>
           </div>

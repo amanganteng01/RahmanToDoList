@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -29,6 +30,24 @@ class LoginController extends Controller
     public function logout()
     {
         Auth::logout();
-        return redirect(route('login'))->with('success', 'Logout successfuly'); 
+        return redirect(route('login'))->with('success', 'Logout successfuly');
+    }
+
+    public function viewregis()
+    {
+        return view('login.register');
+    }
+
+    public function SignIn(Request $request)
+    {
+        $validasi = $request->validate([
+            'username' => 'required|string|max:255|unique:users',
+            'password' => 'required|string|min:8|confirmed',
+        ]);
+
+        $validasi['password'] = bcrypt($validasi['password']);
+        User::create($validasi);
+
+        return redirect(route('login'))->with('success', 'Registration successful, please login');
     }
 }
