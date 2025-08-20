@@ -36,7 +36,7 @@
           </div>
           <div class="mb-3">
             <label for="message-text" class="col-form-label">Description:</label>
-            <input type="text" name="description" class="form-control mt-3" placeholder="Short Descryption" required maxlength="50">
+            <textarea name="description" id="description" class="form-control mt-3" placeholder="Short Descryption" required maxlength="50"></textarea>
           </div>
         </div>
         <div class="modal-footer">

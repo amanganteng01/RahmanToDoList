@@ -30,6 +30,15 @@
                 <form action="{{ route('SignIn') }}" method="post">
                     @csrf
                     <div class="mb-3">
+                        <label for="name" class="form-label">Name:</label>
+                        <div class="input-group">
+                            <span class="input-group-text">
+                                <i class="fa-regular fa-user"></i>
+                            </span>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Enter Username">
+                        </div>
+                    </div>
+                    <div class="mb-3">
                         <label for="username" class="form-label">Username:</label>
                         <div class="input-group">
                             <span class="input-group-text">

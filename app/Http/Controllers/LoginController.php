@@ -41,8 +41,9 @@ class LoginController extends Controller
     public function SignIn(Request $request)
     {
         $validasi = $request->validate([
+            'name' => 'required|string',
             'username' => 'required|string|max:255|unique:users',
-            'password' => 'required|string|min:8|confirmed',
+            'password' => 'required|string',
         ]);
 
         $validasi['password'] = bcrypt($validasi['password']);
